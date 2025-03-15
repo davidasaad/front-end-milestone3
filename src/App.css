@@ -24,26 +24,169 @@ h2 {
   justify-content: center;
 }
 
+.topmovieslist, .top5actors {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.topmovies, .top5s, .movies_list, .customer-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  padding: 15px;
+  border: 2px solid #141111;
+  color: black;
+  border-radius: 10px;
+  background-color: rgb(255, 228, 196);
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.topmovies:hover, .top5s:hover, .movies_list:hover {
+  background-color: #76d4f3;
+}
+
+
+
+.topmovies p, .top5s p, .movies_list p {
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.movie-description, .actor-rentals, .Customer_Detials {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
 ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  flex-direction: column;
-  background-color: bisque;
-  border: 1px solid #9e2c2c;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  padding: 0;
 }
 
-.movie-description p, .actor-rentals p, .Customer_Detials p{
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
+.ActorAndMovies, .Customers {
+  text-align: center;
+  margin-top: 20px;
 }
+
+.TopMovies, .topmovies {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+
+.addcutomer {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 15px;
+  background-color: #0a1f0b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addcutomer:hover {
+  background-color: #45a049;
+}
+
+.Customer_Detials {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.Customer_Detials button {
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-option {
+  background-color: #2196F3;
+  color: white;
+}
+
+.delete-option {
+  background-color: #f44336;
+  color: white;
+}
+
+.return-option {
+  background-color: #65f10e;
+  color: white;
+}
+
 
 ul button{
-  background-color: rgb(56, 137, 208);
+  background-color: rgb(87, 165, 234);
   color: white;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.rentoption, .editoption, .deleteoption{
+  display: block;
+  margin: auto;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.close, .confirm {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.close {
+  background: red;
+  color: white;
+}
+
+.confirm {
+  background: green;
+  color: white;
 }

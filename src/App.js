@@ -8,8 +8,6 @@ function App(){
   const [topActors, setTopActors] = useState([]);
   const [selected, setselected] = useState(null);
   
-
-
   useEffect(() => {
 
     fetch("/top5RentedMovies")
@@ -31,8 +29,6 @@ function App(){
     setselected(selected === index ? null : index);
   }
 
-
-
   return (
       <div className='Homepage'>
       <h1>
@@ -49,9 +45,11 @@ function App(){
           {topMovies.map((movie, index) => {
             const movieId = `movie-${index}`;
             return (
-              <li key={movieId}>
-                <button onClick={() => clicked(movieId)}>
+              <li className='topmovieslist' key={movieId}>
+                <button className='topmovies' onClick={() => clicked(movieId)}>
                   {movie.title}
+                  <p>Rentals Count: {movie.rental_count}</p>
+                  <p>Renatl Rate: ${movie.rental_rate}</p>
                 </button>
                 {selected === movieId && (
                   <div className="movie-description">
@@ -78,16 +76,14 @@ function App(){
           {topActors.map((actor, index) => {
             const actorId = `actor-${index}`;
             return (
-              <li key={actorId}>
-                <button onClick={() => clicked(actorId)}>
+              <li className='top5actors' key={actorId}>
+                <button className='top5s' onClick={() => clicked(actorId)}>
                   {actor.first_name}, {actor.last_name}
+                  <p>Actor ID: {actor.actor_id}</p>
+                  <p>Movies: {actor.rental_count}</p>
                 </button>
                 {selected === actorId && (
                   <div className="actor-rentals">
-                    <p>Actor First Name: {actor.first_name}</p>
-                    <p>Actor Last Name: {actor.last_name}</p>
-                    <p>Actor ID: {actor.actor_id}</p>
-                    <p>Movies: {actor.rental_count}</p>
                     <p>Top five Movies for {actor.first_name}:</p>
                     <ul>
                       {actor.top_movie.map((movie, i) => (
